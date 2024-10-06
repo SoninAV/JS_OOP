@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_OOP</title>
+</head>
+<body>
+    <h1>JS_OOP</h1>
+    <script>
+        // Задание1
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width
+                this.height = height
+            }
+            getArea() {
+                return this.width * this.height
+            }
+            getPerimeter() {
+                return 2 * (this.width + this.height)
+            }
+            toString() {
+                const area = this.getArea()
+                const perimeter = this.getPerimeter()
+                return `Прямоугольник с шириной ${this.width} и высотой ${this.height} имеет периметр ${perimeter} и площадь ${area}`
+            }
+        }
+
+        const rect = new Rectangle(100, 30)
+        console.log(rect.toString())
+
+        // Задание2
+        class Square extends Rectangle {
+            constructor(side) {
+                super(side, side)
+            }
+            toString() {
+                const area = this.getArea()
+                const perimeter = this.getPerimeter()
+                return `Квадрат с длиной стороны ${this.height} имеет периметр ${perimeter} и площадью ${area}`
+            }
+        }
+
+        const sq = new Square(15)
+        console.log(sq.toString())
+    </script>
+</body>
+</html>
